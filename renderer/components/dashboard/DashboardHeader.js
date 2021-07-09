@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Button, Text, Box } from 'ooni-components'
 import { FormattedMessage } from 'react-intl'
 
-import LastTest from 'components/dashboard/LastTest'
+import LastTest from '../../components/dashboard/LastTest'
 
 const DashBoardHeaderContainer = styled.div`
   color: white;

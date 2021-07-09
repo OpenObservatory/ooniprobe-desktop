@@ -7,7 +7,7 @@ import { useConfig } from './useConfig'
 
 export const LanguageSelector = () => {
   const intl = useIntl()
-  const [, setLangugageConfig] = useConfig('language')
+  const [, setLanguageConfig] = useConfig('language')
 
   const supportedLanguages = getSupportedLanguages()
   const languageOptions = useMemo(() => {
@@ -19,9 +19,10 @@ export const LanguageSelector = () => {
   }, [intl.locale]) /* eslint-disable-line */
 
   const onChange = useCallback((event) => {
+    console.log('target value: ', event.target.value)
     intl.setLocale(event.target.value)
-    setLangugageConfig(event.target.value)
-  }, [intl, setLangugageConfig])
+    setLanguageConfig(event.target.value)
+  }, [intl, setLanguageConfig])
 
   return (
     <Flex flexDirection='column'>
@@ -30,6 +31,7 @@ export const LanguageSelector = () => {
         <Select
           defaultValue={intl.locale}
           onChange={onChange}
+          data-testid='language-select'
         >
           {languageOptions}
         </Select>

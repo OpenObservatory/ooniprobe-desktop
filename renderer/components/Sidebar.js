@@ -72,18 +72,28 @@ NavItem.propTypes = {
   pathName: PropTypes.string
 }
 
+// Using getter function to get `name` because `id` is needed for testing
 const navigationPaths = {
   '/dashboard': {
-    name: <FormattedMessage id='Dashboard.Tab.Label' />,
-    icon: <MdWeb size={40} />
+    id: 'Dashboard.Tab.Label',
+    icon: <MdWeb size={40} />,
+    get name() {
+      return <FormattedMessage id={this.id} />
+    }
   },
   '/test-results': {
-    name: <FormattedMessage id='TestResults.Overview.Tab.Label' />,
-    icon: <MdHistory size={40} />
+    id: 'TestResults.Overview.Tab.Label',
+    icon: <MdHistory size={40} />,
+    get name() {
+      return <FormattedMessage id={this.id} />
+    }
   },
   '/settings': {
-    name: <FormattedMessage id='Settings.Title' />,
-    icon: <FaCog size={40} />
+    id: 'Settings.Title',
+    icon: <FaCog size={40} />,
+    get name() {
+      return <FormattedMessage id={this.id} />
+    }
   }
 }
 
@@ -153,3 +163,5 @@ Sidebar.propTypes = {
   children: PropTypes.element
 }
 export default Sidebar
+
+export { NavItem, navigationPaths }

@@ -25,9 +25,9 @@
     "publish:win": "yarn run build:clean && electron-builder --win -p always",
     "icon-gen": "icon-gen -i static/Icon-Color.svg -o main/static/icons -r -m ico,icns",
     "lint": "eslint --ignore-path .gitignore .",
-    "test:current": "jest Sections.test.js -c test/lib/jest.config.js",
-    "test:unit": "jest -c test/lib/jest.config.js",
-    "test:e2e": "jest -c test/lib/jest.config.js --testRegex 'e2e.js' --runInBand",
+    "test:current": "jest DashboardHeader.test.js -c test/lib/unit.config.js",
+    "test:unit": "jest -c test/lib/unit.config.js",
+    "test:e2e": "jest -c test/lib/integration.config.js --testRegex 'e2e.js' --runInBand",
     "postinstall": "electron-builder install-app-deps",
     "storybook": "start-storybook -p 6006"
   },

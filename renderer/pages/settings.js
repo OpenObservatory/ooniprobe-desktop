@@ -17,7 +17,7 @@ import { WebsiteCategoriesSelector } from '../components/settings/WebsiteCategor
 import Layout from '../components/Layout'
 import Sidebar from '../components/Sidebar'
 import { default as pkgJson } from '../../package.json'
-import FormattedMarkdownMessage from 'components/FormattedMarkdownMessage'
+import FormattedMarkdownMessage from '../components/FormattedMarkdownMessage'
 
 const TopBar = styled.div`
   background-color: ${props => props.theme.colors.blue5};
